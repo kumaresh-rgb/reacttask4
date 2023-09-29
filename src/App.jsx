@@ -1,5 +1,7 @@
-// App.js
-import React from "react";
+
+import React, { useEffect } from 'react';
+import { inject } from '@vercel/analytics';
+
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Home from "./pages/Home";
@@ -14,6 +16,10 @@ import Theme from "./pages/Theme";
 import Register from './pages/Register'
 import Login from './pages/Login'
 function App() {
+  useEffect(() => {
+    inject();
+  }, []);
+
   return (
     <Router>
     <div>
